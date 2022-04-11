@@ -1,0 +1,134 @@
+body{
+    background-color: darkblue;
+    
+    background-image: url("../img/gamer.jpg");
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-blend-mode: multiply;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+
+#banner{
+/* 
+    position:sticky;
+    top: 0 ; */
+
+    background-color: lightblue;
+    margin-top:1em;
+    background-size: cover;
+    background-image: url("../img/background.jpg");
+    background-repeat: no-repeat;
+    color:silver;
+   border-radius: 15px;
+}
+
+#sort-order{
+    color:whitesmoke;
+}
+
+#review-list{
+    background-color: white;
+    padding:1.2em;
+    margin-top:1.6em;
+  
+}
+
+.game-review{
+    padding:2em;    
+  
+}
+
+.game-name{
+    padding:1.2em;
+}
+
+.review-body{
+    padding:1.2em;
+    line-height: 2em;
+}
+
+.score{
+    padding:1.2em;
+    font-weight: bold;
+   
+}
+
+.fa-star{
+    color: gold;
+}
+
+
+.likes{
+    padding:1.2em;
+    font-weight: bold;
+}
+
+.fa-thumbs-up{
+    color: gold;
+}
+   
+
+.tag{
+    padding:1.2em;
+    font-weight: bold;
+}
+
+.fa-face-smile{
+    color:orange;
+}
+
+.fa-face-frown{
+    color:red;
+}
+
+.fa-face-meh{
+    color:gray;
+}
+
+.submitted{
+    padding:1.2em;
+    font-weight: bold;
+}
+
+.fa-calendar-days{
+    color:blue;
+}
+
+
+th:hover{
+    text-decoration: underline;
+}
+
+
+
+#top-btn-wrapper{
+    position:fixed;
+    bottom:1rem;
+    right:1rem;
+    z-index: 999;
+  }
+  
+  #top-button{
+    padding:1em;
+    margin:1em;
+    background:rgb(255, 115, 0);
+    border-radius: 25%;
+    filter: drop-shadow(5px 5px 4px #444);
+    color:white;  
+    font-size:100%;
+    
+  }
+  
+
+  .hide{
+    display: none;
+    width: -1px;
+}
+
+.icon-wrapper{
+    padding:0.25em;
+}

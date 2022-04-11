@@ -1,0 +1,113 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GamerSift</title>
+
+    <script type="text/javascript" src="./js/reviews.js"></script>
+    <script type="text/javascript" src="./js/sort-table.js"></script>
+    <script type="text/javascript" src="./js/showScore.js"></script>
+    <script type="text/javascript" src="./js/showLikes.js"></script>
+    <script type="text/javascript" src="./js/showSentiment.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="jumbotron" id="banner">
+            <h1>GamerSift</h1>
+        </div>
+
+
+    <div id="sort-order">
+
+    </div>
+
+    <table class="js-sort-table table" id="review-list" title="click the headers to sort">
+
+        <thead>
+            <th onclick="showSorted('Game');">Game</th>
+            <th onclick="showSorted('Score');" class="js-sort-number">Score</th>
+            <th  onclick="showSorted('Likes');" class="js-sort-number">Likes</th>
+            <th onclick="showSorted('Sentiment');" >Sentiment</th>
+            <th onclick="showSorted('Submitted');"  class="s-sort-date">Submitted</th>
+        </thead>
+        <tbody>
+
+            <script>
+
+reviewData.forEach(element => {
+
+        let scoreOutput = showScore(element.score);
+
+        let likesOutput =  showLikes(element.score);
+
+        let sentimentOutput = showSentiment(element.sentiment.tag);
+
+        let isoDate = element.submitted;
+            var d = new Date(isoDate);
+            let submitted = d.toLocaleDateString('en-GB'); // dd/mm/yyyy
+
+
+        document.write(` <tr><td>
+
+            <div class="game-review">
+
+            <div class="game-name">
+            <h3>${element.game.name}</h3>
+            </div>
+            <div class="score">Score:  ${element.score} ${scoreOutput} </div>
+            <div class="likes">Likes: ${element.likes} ${likesOutput}</div>
+            <div class="tag">Sentiment: ${element.sentiment.tag} ${sentimentOutput}</div>
+            <div class="submitted">Date: ${submitted} <i class="fa-solid fa-calendar-days"></i></div>
+            <div class="review-body">${element.body}</div>
+ 
+
+        </div>
+
+            </td>`);
+
+            document.write(`<td class="hide">${element.score}</td>`);
+
+            document.write(` <td class="hide">${element.likes}</td>`);
+
+            document.write(` <td class="hide">${element.sentiment.tag}</td>`);
+
+           document.write(`<td class="hide">${element.submitted}</td></tr>`);
+
+       });
+
+            </script>
+
+        </tbody>
+    </table>
+
+    <div id="top-btn-wrapper">
+        <button class="hide"
+             id="top-button">Top</button>
+      </div>
+
+
+</div>
+
+
+<script type="text/javascript" src="./js/displaySortOrder.js"></script>
+
+<script type="text/javascript" src="./js/topButton.js"></script>
+
+
+</body>
+</html>
