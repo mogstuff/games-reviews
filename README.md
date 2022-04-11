@@ -63,5 +63,6 @@ The following fonts and css libraries were also used:
 - js/topButton.js : logic for "back to top" button
 - index.html container for content
 
+## Deployment
 
-
+You can view the application online here : [https://benevolent-chebakia-1d87a6.netlify.app/](https://benevolent-chebakia-1d87a6.netlify.app/)
